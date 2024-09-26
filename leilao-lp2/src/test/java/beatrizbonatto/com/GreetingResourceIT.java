@@ -1,4 +1,4 @@
-package br.com.beatrizbonatto;
+package beatrizbonatto.com;
 
 import io.quarkus.test.junit.QuarkusIntegrationTest;
 

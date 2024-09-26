@@ -1,4 +1,4 @@
-package br.com.beatrizbonatto;
+package beatrizbonatto.com;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
@@ -14,7 +14,7 @@ class GreetingResourceTest {
           .when().get("/hello")
           .then()
              .statusCode(200)
-             .body(is("Hello from RESTEasy Reactive"));
+             .body(is("Hello from Quarkus REST"));
     }
 
 }
