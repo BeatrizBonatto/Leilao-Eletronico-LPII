@@ -1,20 +1,27 @@
 package beatrizbonatto.com.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity
 public class Produto {
+    @Id
+    @GeneratedValue
     private Long id;
     private String nome;
     private String tipo;
+    private String descricao;
     private Double precoInicial;
-
-    // Construtor
-    public Produto(Long id, String nome, String tipo, Double precoInicial) {
+    
+    public Produto(Long id, String nome, String tipo, String descricao, Double precoInicial) {
         this.id = id;
         this.nome = nome;
         this.tipo = tipo;
+        this.descricao = descricao;
         this.precoInicial = precoInicial;
     }
 
-    // Getters e Setters
     public Long getId() {
         return id;
     }
@@ -39,6 +46,14 @@ public class Produto {
         this.tipo = tipo;
     }
 
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
     public Double getPrecoInicial() {
         return precoInicial;
     }
@@ -46,4 +61,5 @@ public class Produto {
     public void setPrecoInicial(Double precoInicial) {
         this.precoInicial = precoInicial;
     }
+    
 }

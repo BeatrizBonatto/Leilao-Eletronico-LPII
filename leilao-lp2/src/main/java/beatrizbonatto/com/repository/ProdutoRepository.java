@@ -2,23 +2,17 @@ package beatrizbonatto.com.repository;
 
 import beatrizbonatto.com.model.Produto;
 import jakarta.enterprise.context.ApplicationScoped;
-
-import java.util.ArrayList;
-import java.util.List;
+import jakarta.inject.Inject;
+import jakarta.persistence.EntityManager;
+import jakarta.transaction.Transactional;
 
 @ApplicationScoped
 public class ProdutoRepository {
-    private List<Produto> produtos = new ArrayList<>();
+    @Inject
+    EntityManager em;
 
-    public List<Produto> listar() {
-        return produtos;
-    }
-
-    public void adicionar(Produto produto) {
-        produtos.add(produto);
-    }
-
-    public void remover(Long id) {
-        produtos.removeIf(produto -> produto.getId().equals(id));
+    @Transactional
+    public void addProduto(Produto produto) {
+        em.persist(produto);
     }
 }
