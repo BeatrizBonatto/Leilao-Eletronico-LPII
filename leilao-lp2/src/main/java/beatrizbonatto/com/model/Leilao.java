@@ -46,5 +46,4 @@ public class Leilao {
     public void setLocal(String local) {
         this.local = local;
     }
-
 }

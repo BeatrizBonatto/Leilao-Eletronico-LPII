@@ -4,10 +4,10 @@ public class Produto {
     private Long id;
     private String nome;
     private String tipo;
-    private double precoInicial;
+    private Double precoInicial;
 
     // Construtor
-    public Produto(Long id, String nome, String tipo, double precoInicial) {
+    public Produto(Long id, String nome, String tipo, Double precoInicial) {
         this.id = id;
         this.nome = nome;
         this.tipo = tipo;
@@ -39,11 +39,11 @@ public class Produto {
         this.tipo = tipo;
     }
 
-    public double getPrecoInicial() {
+    public Double getPrecoInicial() {
         return precoInicial;
     }
 
-    public void setPrecoInicial(double precoInicial) {
+    public void setPrecoInicial(Double precoInicial) {
         this.precoInicial = precoInicial;
     }
 }
