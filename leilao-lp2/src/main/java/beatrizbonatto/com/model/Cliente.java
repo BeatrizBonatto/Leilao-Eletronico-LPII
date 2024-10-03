@@ -1,5 +1,7 @@
 package beatrizbonatto.com.model;
 
+import java.sql.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -9,15 +11,19 @@ public class Cliente {
     @Id
     @GeneratedValue
     private Long id;
-    private String nome;
-    private String email;
     private String cpf;
-
-    public Cliente(Long id, String nome, String email, String cpf) {
+    private String nome;
+    private Date dataDeNascimento;
+    private String email;
+    private Long celular;
+    
+    public Cliente(Long id, String cpf, String nome, Date dataDeNascimento, String email, Long celular) {
         this.id = id;
-        this.nome = nome;
-        this.email = email;
         this.cpf = cpf;
+        this.nome = nome;
+        this.dataDeNascimento = dataDeNascimento;
+        this.email = email;
+        this.celular = celular;
     }
 
     public Long getId() {
@@ -28,12 +34,28 @@ public class Cliente {
         this.id = id;
     }
 
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
     public String getNome() {
         return nome;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+    
+    public Date getDataDeNascimento() {
+        return dataDeNascimento;
+    }
+
+    public void setDataDeNascimento(Date dataDeNascimento) {
+        this.dataDeNascimento = dataDeNascimento;
     }
 
     public String getEmail() {
@@ -44,12 +66,12 @@ public class Cliente {
         this.email = email;
     }
 
-    public String getCpf() {
-        return cpf;
+    public Long getCelular() {
+        return celular;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setCelular(Long celular) {
+        this.celular = celular;
     }
     
 }

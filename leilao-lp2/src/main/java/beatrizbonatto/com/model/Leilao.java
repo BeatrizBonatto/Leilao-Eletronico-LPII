@@ -1,6 +1,8 @@
 package beatrizbonatto.com.model;
 
+import java.sql.Date;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,14 +13,28 @@ public class Leilao {
     @Id
     @GeneratedValue
     private Long id;
-    private LocalDate data;
-    private String local;
+    private LocalDateTime dataInicio;
+    private LocalDateTime dataFim;
+    private LocalDateTime dataVisitacao;
+    private LocalDateTime dataEvento;
+    private String dominioLeilaoEletronico;
+    private String endereco;
+    private String cidade;
+    private String estado;
     private String status;
     
-    public Leilao(Long id, LocalDate data, String local, String status) {
+    public Leilao(Long id, LocalDateTime dataInicio, LocalDateTime dataFim, LocalDateTime dataVisitacao,
+            LocalDateTime dataEvento, String dominioLeilaoEletronico, String endereco, String cidade, String estado,
+            String status) {
         this.id = id;
-        this.data = data;
-        this.local = local;
+        this.dataInicio = dataInicio;
+        this.dataFim = dataFim;
+        this.dataVisitacao = dataVisitacao;
+        this.dataEvento = dataEvento;
+        this.dominioLeilaoEletronico = dominioLeilaoEletronico;
+        this.endereco = endereco;
+        this.cidade = cidade;
+        this.estado = estado;
         this.status = status;
     }
 
@@ -30,20 +46,68 @@ public class Leilao {
         this.id = id;
     }
 
-    public LocalDate getData() {
-        return data;
+    public LocalDateTime getDataInicio() {
+        return dataInicio;
     }
 
-    public void setData(LocalDate data) {
-        this.data = data;
+    public void setDataInicio(LocalDateTime dataInicio) {
+        this.dataInicio = dataInicio;
     }
 
-    public String getLocal() {
-        return local;
+    public LocalDateTime getDataFim() {
+        return dataFim;
     }
 
-    public void setLocal(String local) {
-        this.local = local;
+    public void setDataFim(LocalDateTime dataFim) {
+        this.dataFim = dataFim;
+    }
+
+    public LocalDateTime getDataVisitacao() {
+        return dataVisitacao;
+    }
+
+    public void setDataVisitacao(LocalDateTime dataVisitacao) {
+        this.dataVisitacao = dataVisitacao;
+    }
+
+    public LocalDateTime getDataEvento() {
+        return dataEvento;
+    }
+
+    public void setDataEvento(LocalDateTime dataEvento) {
+        this.dataEvento = dataEvento;
+    }
+
+    public String getDominioLeilaoEletronico() {
+        return dominioLeilaoEletronico;
+    }
+
+    public void setDominioLeilaoEletronico(String dominioLeilaoEletronico) {
+        this.dominioLeilaoEletronico = dominioLeilaoEletronico;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public String getStatus() {
@@ -53,5 +117,7 @@ public class Leilao {
     public void setStatus(String status) {
         this.status = status;
     }
+    
+    
     
 }

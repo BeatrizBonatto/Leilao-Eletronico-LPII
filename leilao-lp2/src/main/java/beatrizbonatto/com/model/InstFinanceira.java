@@ -11,11 +11,13 @@ public class InstFinanceira {
     @Id
     @GeneratedValue
     private Long id;
+    private Long codigo;
     private String nome;
     private Double cnpj;
     
-    public InstFinanceira(Long id, String nome, Double cnpj) {
+    public InstFinanceira(Long id ,Long codigo, String nome, Double cnpj) {
         this.id = id;
+        this.codigo = codigo;
         this.nome = nome;
         this.cnpj = cnpj;
     }
@@ -26,6 +28,14 @@ public class InstFinanceira {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Long codigo) {
+        this.codigo = codigo;
     }
 
     public String getNome() {
