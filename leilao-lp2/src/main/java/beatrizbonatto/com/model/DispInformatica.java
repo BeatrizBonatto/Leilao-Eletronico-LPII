@@ -10,15 +10,13 @@ public class DispInformatica extends Produto {
     private TipoDispositivo tipoDispositivo;
     private String marca;
     private String modelo;
-    private String complemento;
 
-    public DispInformatica(Long id, String nome, String tipo, String descricao, Double precoInicial,
-            TipoDispositivo tipoDispositivo, String marca, String modelo, String serie, String complemento) {
-        super(id, nome, "Dispositivo de Informarica", descricao, precoInicial);
+    public DispInformatica(Long id, String tipo, String descricao, Double precoInicial, Leilao leilao,
+            TipoDispositivo tipoDispositivo, String marca, String modelo, String serie) {
+        super(id, "Dispositivo de Informarica", descricao, precoInicial, leilao);
         this.tipoDispositivo = tipoDispositivo;
         this.marca = marca;
         this.modelo = modelo;
-        this.complemento = complemento;
     }
 
     public TipoDispositivo getTipoDispositivo() {
@@ -44,15 +42,5 @@ public class DispInformatica extends Produto {
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
-
-    public String getComplemento() {
-        return complemento;
-    }
-
-    public void setComplemento(String complemento) {
-        this.complemento = complemento;
-    }
-
-    
 
 }

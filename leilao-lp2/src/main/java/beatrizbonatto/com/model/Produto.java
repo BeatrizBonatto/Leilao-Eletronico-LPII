@@ -1,25 +1,36 @@
 package beatrizbonatto.com.model;
 
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
+@Schema(description = "Produto a ser leiloado")
 public class Produto {
     @Id
     @GeneratedValue
     private Long id;
-    private String nome;
     private String tipo;
-    private String descricao;
+    private String complemento;
     private Double precoInicial;
     
-    public Produto(Long id, String nome, String tipo, String descricao, Double precoInicial) {
+    @ManyToOne
+    @JoinColumn(name = "leilao_id")
+    private Leilao leilao;
+
+    public Produto() {
+    }
+
+    public Produto(Long id, String tipo, String complemento, Double precoInicial, Leilao leilao) {
         this.id = id;
-        this.nome = nome;
         this.tipo = tipo;
-        this.descricao = descricao;
+        this.complemento = complemento;
         this.precoInicial = precoInicial;
+        this.leilao = leilao;
     }
 
     public Long getId() {
@@ -30,14 +41,6 @@ public class Produto {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public String getTipo() {
         return tipo;
     }
@@ -46,12 +49,12 @@ public class Produto {
         this.tipo = tipo;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getComplemento() {
+        return complemento;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
     }
 
     public Double getPrecoInicial() {
@@ -60,6 +63,14 @@ public class Produto {
 
     public void setPrecoInicial(Double precoInicial) {
         this.precoInicial = precoInicial;
+    }
+
+    public Leilao getLeilao() {
+        return leilao;
+    }
+
+    public void setLeilao(Leilao leilao) {
+        this.leilao = leilao;
     }
     
 }

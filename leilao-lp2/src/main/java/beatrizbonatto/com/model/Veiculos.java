@@ -16,9 +16,9 @@ public class Veiculos extends Produto {
     private Double km_rodados;
     private String placa;
 
-    public Veiculos(Long id, String nome, String tipo, String descricao, java.lang.Double precoInicial,
+    public Veiculos(Long id, String tipo, String descricao, java.lang.Double precoInicial, Leilao leilao,
             TipoVeiculo tipoVeiculo, String marca, String modelo, Integer ano, String cor, Double km_rodados, String placa) {
-        super(id, nome, "Veiculo", descricao, precoInicial);
+        super(id, "Veiculo", descricao, precoInicial, leilao);
         this.tipoVeiculo = tipoVeiculo;
         this.marca = marca;
         this.modelo = modelo;
@@ -71,5 +71,4 @@ public class Veiculos extends Produto {
         this.placa = placa;
     }
 
-    
 }

@@ -1,10 +1,13 @@
 package beatrizbonatto.com.model;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Leilao {
@@ -21,9 +24,12 @@ public class Leilao {
     private String estado;
     private String status;
     
+    @OneToMany
+    private List<Produto> produtos = new ArrayList<>();
+
     public Leilao(Long id, LocalDateTime dataInicio, LocalDateTime dataFim, LocalDateTime dataVisitacao,
-            LocalDateTime dataEvento, String dominioLeilaoEletronico, String endereco, String cidade, String estado,
-            String status) {
+            LocalDateTime dataEvento, String dominioLeilaoEletronico, String endereco, String cidade, 
+            String estado,String status, List<Produto> produtos) {
         this.id = id;
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
@@ -34,6 +40,7 @@ public class Leilao {
         this.cidade = cidade;
         this.estado = estado;
         this.status = status;
+        this.produtos = produtos;
     }
 
     public Long getId() {
@@ -115,7 +122,13 @@ public class Leilao {
     public void setStatus(String status) {
         this.status = status;
     }
-    
-    
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
+    }
     
 }
