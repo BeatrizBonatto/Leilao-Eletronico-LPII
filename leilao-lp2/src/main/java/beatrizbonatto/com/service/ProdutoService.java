@@ -20,7 +20,7 @@ import jakarta.ws.rs.core.Response;
 @Path("/produtos")
 @ApplicationScoped
 public class ProdutoService {
-    
+
     @Inject
     ProdutoRepository produtoRepository;
 
@@ -29,7 +29,7 @@ public class ProdutoService {
     @APIResponse(responseCode = "201", description = "Produto criado com sucesso.")
     public Response reProduto(Produto produto) {
         produtoRepository.registroProduto(produto);
-        return Response.status(Response.Status.CREATED).entity(produto).build();  
+        return Response.status(Response.Status.CREATED).entity(produto).build();
     }
 
     @GET
@@ -42,7 +42,7 @@ public class ProdutoService {
         if (produto == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
-        return Response.ok(produto).build(); 
+        return Response.ok(produto).build();
     }
 
     @GET

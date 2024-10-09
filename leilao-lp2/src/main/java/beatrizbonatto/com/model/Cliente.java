@@ -16,6 +16,9 @@ public class Cliente {
     private Date dataDeNascimento;
     private String email;
     private Long celular;
+
+    public Cliente() {
+    }
     
     public Cliente(Long id, String cpf, String nome, Date dataDeNascimento, String email, Long celular) {
         this.id = id;

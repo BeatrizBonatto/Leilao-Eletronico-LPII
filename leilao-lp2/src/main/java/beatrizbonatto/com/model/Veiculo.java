@@ -7,7 +7,7 @@ import jakarta.persistence.Entity;
 
 @Entity
 @Schema(description = "Veiculo a ser leiloado")
-public class Veiculos extends Produto {
+public class Veiculo extends Produto {
     private TipoVeiculo tipoVeiculo;
     private String marca;
     private String modelo;
@@ -16,7 +16,10 @@ public class Veiculos extends Produto {
     private Double km_rodados;
     private String placa;
 
-    public Veiculos(Long id, String tipo, String descricao, java.lang.Double precoInicial, Leilao leilao,
+    public Veiculo() {
+    }
+
+    public Veiculo(Long id, String tipo, String descricao, java.lang.Double precoInicial, Leilao leilao,
             TipoVeiculo tipoVeiculo, String marca, String modelo, Integer ano, String cor, Double km_rodados, String placa) {
         super(id, "Veiculo", descricao, precoInicial, leilao);
         this.tipoVeiculo = tipoVeiculo;

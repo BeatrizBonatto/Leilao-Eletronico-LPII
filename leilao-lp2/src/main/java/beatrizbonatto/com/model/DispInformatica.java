@@ -11,6 +11,9 @@ public class DispInformatica extends Produto {
     private String marca;
     private String modelo;
 
+    public DispInformatica() {
+    }
+
     public DispInformatica(Long id, String tipo, String descricao, Double precoInicial, Leilao leilao,
             TipoDispositivo tipoDispositivo, String marca, String modelo, String serie) {
         super(id, "Dispositivo de Informarica", descricao, precoInicial, leilao);

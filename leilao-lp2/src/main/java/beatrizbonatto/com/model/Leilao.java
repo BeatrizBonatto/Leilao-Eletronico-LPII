@@ -23,13 +23,16 @@ public class Leilao {
     private String cidade;
     private String estado;
     private String status;
-    
+
     @OneToMany
     private List<Produto> produtos = new ArrayList<>();
 
+    public Leilao() {
+    }
+
     public Leilao(Long id, LocalDateTime dataInicio, LocalDateTime dataFim, LocalDateTime dataVisitacao,
-            LocalDateTime dataEvento, String dominioLeilaoEletronico, String endereco, String cidade, 
-            String estado,String status, List<Produto> produtos) {
+            LocalDateTime dataEvento, String dominioLeilaoEletronico, String endereco, String cidade,
+            String estado, String status, List<Produto> produtos) {
         this.id = id;
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
@@ -130,5 +133,5 @@ public class Leilao {
     public void setProdutos(List<Produto> produtos) {
         this.produtos = produtos;
     }
-    
+
 }
