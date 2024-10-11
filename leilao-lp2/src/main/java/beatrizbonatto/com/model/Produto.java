@@ -25,8 +25,7 @@ public class Produto {
     public Produto() {
     }
 
-    public Produto(Long id, String tipo, String complemento, Double precoInicial, Leilao leilao) {
-        this.id = id;
+    public Produto(String tipo, String complemento, Double precoInicial, Leilao leilao) {
         this.tipo = tipo;
         this.complemento = complemento;
         this.precoInicial = precoInicial;

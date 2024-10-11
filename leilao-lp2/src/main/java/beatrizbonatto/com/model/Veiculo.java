@@ -21,7 +21,7 @@ public class Veiculo extends Produto {
 
     public Veiculo(Long id, String tipo, String descricao, java.lang.Double precoInicial, Leilao leilao,
             TipoVeiculo tipoVeiculo, String marca, String modelo, Integer ano, String cor, Double km_rodados, String placa) {
-        super(id, "Veiculo", descricao, precoInicial, leilao);
+        super("Veiculo", descricao, precoInicial, leilao);
         this.tipoVeiculo = tipoVeiculo;
         this.marca = marca;
         this.modelo = modelo;

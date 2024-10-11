@@ -16,7 +16,7 @@ public class DispInformatica extends Produto {
 
     public DispInformatica(Long id, String tipo, String descricao, Double precoInicial, Leilao leilao,
             TipoDispositivo tipoDispositivo, String marca, String modelo, String serie) {
-        super(id, "Dispositivo de Informarica", descricao, precoInicial, leilao);
+        super("Dispositivo de Informarica", descricao, precoInicial, leilao);
         this.tipoDispositivo = tipoDispositivo;
         this.marca = marca;
         this.modelo = modelo;

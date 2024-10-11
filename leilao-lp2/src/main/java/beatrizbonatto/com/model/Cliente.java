@@ -20,8 +20,7 @@ public class Cliente {
     public Cliente() {
     }
     
-    public Cliente(Long id, String cpf, String nome, Date dataDeNascimento, String email, Long celular) {
-        this.id = id;
+    public Cliente(String cpf, String nome, Date dataDeNascimento, String email, Long celular) {
         this.cpf = cpf;
         this.nome = nome;
         this.dataDeNascimento = dataDeNascimento;

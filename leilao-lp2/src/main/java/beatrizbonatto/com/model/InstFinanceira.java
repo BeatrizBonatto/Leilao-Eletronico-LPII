@@ -18,8 +18,7 @@ public class InstFinanceira {
     public InstFinanceira() {
     }
 
-    public InstFinanceira(Long id ,Long codigo, String nome, Double cnpj) {
-        this.id = id;
+    public InstFinanceira(Long codigo, String nome, Double cnpj) {
         this.codigo = codigo;
         this.nome = nome;
         this.cnpj = cnpj;
