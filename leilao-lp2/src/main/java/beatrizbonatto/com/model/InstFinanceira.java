@@ -1,19 +1,24 @@
 package beatrizbonatto.com.model;
 
+import jakarta.persistence.*;
 import org.locationtech.jts.geom.impl.PackedCoordinateSequence.Double;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import java.util.List;
 
 @Entity
 public class InstFinanceira {
     @Id
     @GeneratedValue
     private Long id;
+    @Column(nullable = false)
     private Long codigo;
+    @Column(nullable = false)
     private String nome;
+    @Column(nullable = false)
     private Double cnpj;
+
+    @ManyToMany
+    List<Leilao> leilaos;
     
     public InstFinanceira() {
     }

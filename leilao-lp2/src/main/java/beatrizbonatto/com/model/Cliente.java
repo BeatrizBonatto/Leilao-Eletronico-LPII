@@ -2,6 +2,7 @@ package beatrizbonatto.com.model;
 
 import java.sql.Date;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -11,16 +12,21 @@ public class Cliente {
     @Id
     @GeneratedValue
     private Long id;
-    private String cpf;
+    @Column(nullable = false)
+    private Double cpf;
+    @Column(nullable = false)
     private String nome;
+    @Column(nullable = false)
     private Date dataDeNascimento;
+    @Column(nullable = false)
     private String email;
+    @Column(nullable = false)
     private Long celular;
 
     public Cliente() {
     }
     
-    public Cliente(String cpf, String nome, Date dataDeNascimento, String email, Long celular) {
+    public Cliente(Double cpf, String nome, Date dataDeNascimento, String email, Long celular) {
         this.cpf = cpf;
         this.nome = nome;
         this.dataDeNascimento = dataDeNascimento;
@@ -36,11 +42,11 @@ public class Cliente {
         this.id = id;
     }
 
-    public String getCpf() {
+    public Double getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public void setCpf(Double cpf) {
         this.cpf = cpf;
     }
 

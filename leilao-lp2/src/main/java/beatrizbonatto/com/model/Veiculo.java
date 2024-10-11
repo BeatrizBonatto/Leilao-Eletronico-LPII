@@ -1,5 +1,6 @@
 package beatrizbonatto.com.model;
 
+import jakarta.persistence.Column;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.locationtech.jts.geom.impl.PackedCoordinateSequence.Double;
 
@@ -8,12 +9,19 @@ import jakarta.persistence.Entity;
 @Entity
 @Schema(description = "Veiculo a ser leiloado")
 public class Veiculo extends Produto {
+    @Column(nullable = false)
     private TipoVeiculo tipoVeiculo;
+    @Column(nullable = false)
     private String marca;
+    @Column(nullable = false)
     private String modelo;
+    @Column(nullable = false)
     private Integer ano;
+    @Column(nullable = false)
     private String cor;
-    private Double km_rodados;
+    @Column(nullable = false)
+    private Double kmRodados;
+    @Column(nullable = false)
     private String placa;
 
     public Veiculo() {
@@ -27,7 +35,7 @@ public class Veiculo extends Produto {
         this.modelo = modelo;
         this.ano = ano;
         this.cor = cor;
-        this.km_rodados = km_rodados;
+        this.kmRodados = km_rodados;
         this.placa = placa;
     }
 
@@ -61,11 +69,11 @@ public class Veiculo extends Produto {
     public void setCor(String cor) {
         this.cor = cor;
     }
-    public Double getKm_rodados() {
-        return km_rodados;
+    public Double getKmRodados() {
+        return kmRodados;
     }
-    public void setKm_rodados(Double km_rodados) {
-        this.km_rodados = km_rodados;
+    public void setKmRodados(Double km_rodados) {
+        this.kmRodados = km_rodados;
     }
     public String getPlaca() {
         return placa;

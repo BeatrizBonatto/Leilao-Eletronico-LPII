@@ -4,35 +4,53 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 @Entity
 public class Leilao {
     @Id
     @GeneratedValue
     private Long id;
+
+    @Column(nullable = false)
     private LocalDateTime dataInicio;
+
+    @Column(nullable = false)
     private LocalDateTime dataFim;
+
+    @Column(nullable = false)
     private LocalDateTime dataVisitacao;
+
+    @Column(nullable = false)
     private LocalDateTime dataEvento;
+
+    @Column(nullable = false)
     private String dominioLeilaoEletronico;
+
+    @Column(nullable = false)
     private String endereco;
+
+    @Column(nullable = false)
     private String cidade;
+
+    @Column(nullable = false)
     private String estado;
+
+    @Column(nullable = false)
     private String status;
 
     @OneToMany
     private List<Produto> produtos = new ArrayList<>();
+
+    @ManyToMany
+    private InstFinanceira instFinanceira;
 
     public Leilao() {
     }
 
     public Leilao(Long id, LocalDateTime dataInicio, LocalDateTime dataFim, LocalDateTime dataVisitacao,
             LocalDateTime dataEvento, String dominioLeilaoEletronico, String endereco, String cidade,
-            String estado, String status, List<Produto> produtos) {
+            String estado, String status, List<Produto> produtos, InstFinanceira instFinanceira) {
         this.id = id;
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
@@ -44,6 +62,7 @@ public class Leilao {
         this.estado = estado;
         this.status = status;
         this.produtos = produtos;
+        this.instFinanceira = instFinanceira;
     }
 
     public Long getId() {
@@ -134,4 +153,11 @@ public class Leilao {
         this.produtos = produtos;
     }
 
+    public InstFinanceira getInstFinanceira() {
+        return instFinanceira;
+    }
+
+    public void setInstFinanceira(InstFinanceira instFinanceira) {
+        this.instFinanceira = instFinanceira;
+    }
 }

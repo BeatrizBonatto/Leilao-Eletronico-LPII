@@ -1,5 +1,6 @@
 package beatrizbonatto.com.model;
 
+import jakarta.persistence.Column;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import jakarta.persistence.Entity;
@@ -7,8 +8,11 @@ import jakarta.persistence.Entity;
 @Entity
 @Schema(description = "Dispositivo de Informatica a ser leiloado")
 public class DispInformatica extends Produto {
+    @Column(nullable = false)
     private TipoDispositivo tipoDispositivo;
+    @Column(nullable = false)
     private String marca;
+    @Column(nullable = false)
     private String modelo;
 
     public DispInformatica() {

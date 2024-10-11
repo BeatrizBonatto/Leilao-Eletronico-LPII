@@ -1,12 +1,7 @@
 package beatrizbonatto.com.model;
 
+import jakarta.persistence.*;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 
 @Entity
 @Schema(description = "Produto a ser leiloado")
@@ -14,8 +9,14 @@ public class Produto {
     @Id
     @GeneratedValue
     private Long id;
+
+    @Column(nullable = false)
     private String tipo;
+
+    @Column
     private String complemento;
+
+    @Column(nullable = false)
     private Double precoInicial;
     
     @ManyToOne
